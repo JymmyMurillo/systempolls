@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from polls.views import polls, poll, results
+from django.config import settings
+from django.config.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', polls, name='polls'),
     path('polls/<int:poll_id>/', poll, name='poll'),
     path('polls/<int:poll_id>/results/', results, name='results'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATICS_ROOT)
