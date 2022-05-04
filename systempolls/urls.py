@@ -24,4 +24,4 @@ urlpatterns = [
     path('polls/', polls, name='polls'),
     path('polls/<int:poll_id>/', poll, name='poll'),
     path('polls/<int:poll_id>/results/', results, name='results'),
-] + static(settings.STATIC_URL, document_root=settings.STATICS_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
